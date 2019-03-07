@@ -1,0 +1,61 @@
+{% extends '_base.html' %}
+{% block subtitle %}
+<div class="col-lg-12">
+    <div class='row mi-margen-inferior'>
+        <!--<form action="index/ciudades" method="get" enctype="multipart/form-data" id="elForm">-->
+        <!--    <div class='col-md-4 col-md-offset-3' >-->
+        <!--        <input type="text" name="filtro" class="form-control" id="filtro" placeholder="Filtrar" value="{{filtro}}" />-->
+        <!--        <input type="hidden" name="orden" id="orden" value="{{orden}}" />-->
+        <!--    </div>-->
+        <!--    <div class='col-md-2'>-->
+        <!--        <input type="submit" class="btn btn-success" value="Ok">-->
+        <!--    </div>-->
+        <!--</form>-->
+        <input type="text" name="filtro" class="form-control" id="filtro"  placeholder="Filtrar"  />
+        <button id="filtroBt">Filtrar</button>
+    </div>
+    
+    <div class ="contenedortabla">
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <td><a href="#" class="ordenar" data-orden='c.categoria'>nombre categoria</a></th>
+              <th><a href="#" class="ordenar" data-orden='l.href'>href</a></th>
+              <th><a href="#" class="ordenar" data-orden='l.comentario'>Comentario</a></th>
+            </tr>
+          </thead>
+          <tbody class="table_body">
+                {% for item in lista.link%}
+                <tr>
+                  <td scope="row">{{item.links.nombrecategoria}}</td>
+                  <td>{{item.links.href}}</td>
+                  <td>{{item.links.comentario}}</td>
+                  <td><button class="borrar" data-id='{{item.links.id}}'>Borrar</button></td>
+                </tr>
+             {% endfor %}
+        </tbody>
+        </table>
+    </div>
+    <div id="pintarPaginas">
+        <div class='col-md-3'>
+            <a href = "#" class = "btnPagina btn btn-primary" data-pagina='{{lista.paginas.primero}}'>Primero</a>
+            <!--<a href="index/listarLinks?pagina={{lista.paginas.primero}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Primero</a>-->
+        </div>
+        <div class='col-md-3'>
+            <a href = "#" class = "btnPagina btn btn-primary" data-pagina='{{lista.paginas.anterior}}'>anterior</a>
+            <!--<a href="index/listarLinks?pagina={{lista.paginas.anterior}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Anterior</a>-->
+        </div>
+        <div class='col-md-3'>
+            <a href = "#" class = "btnPagina btn btn-primary" data-pagina='{{lista.paginas.siguiente}}'>siguiente</a>
+            <!--<a href="index/listarLinks?pagina={{lista.paginas.siguiente}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Siguiente</a>-->
+        </div>
+        <div class='col-md-3'>
+            <a href = "#" class = "btnPagina btn btn-primary" data-pagina='{{lista.paginas.ultimo}}'>ultimo</a>
+            <!--<a href="index/listarLinks?pagina={{lista.paginas.ultimo}}&orden={{lista.paginas.orden}}" class="btn contact-submit" role="button">Último</a>-->
+        </div>
+    </div>
+    <div class="text-center">
+            <a href="." class="btn contact-submit" role="button">Volver</a>
+        </div>
+</div>
+{%endblock%}

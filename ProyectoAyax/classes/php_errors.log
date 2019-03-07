@@ -1,0 +1,2 @@
+[16-Feb-2019 17:58:54 UTC] PHP Warning:  require_once(../../../classes/vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/ProyectoAyax/classes/cli_doctrine/bootstrap.php on line 3
+[16-Feb-2019 17:58:54 UTC] PHP Fatal error:  require_once(): Failed opening required '../../../classes/vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/ProyectoAyax/classes/cli_doctrine/bootstrap.php on line 3
