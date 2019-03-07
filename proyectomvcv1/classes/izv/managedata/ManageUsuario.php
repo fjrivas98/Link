@@ -19,7 +19,6 @@ class ManageUsuario {
         $resultado = 0;
         if($this->db->connect()) {
             $sql = 'insert into usuario values(:id, :correo, :alias, :nombre , :clave, :activo, :fechaalta, :admin)';
-             echo  '<pre>' . var_export($usuario, true) . '</pre>';
             if($this->db->execute($sql, $usuario->get())) {
                 $resultado = $this->db->getConnection()->lastInsertId();
             }

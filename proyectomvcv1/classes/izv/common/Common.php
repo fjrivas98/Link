@@ -22,6 +22,8 @@ trait Common {
         }
         return $this;
     }
+    
+    
 
     function get() {
         $array = array();

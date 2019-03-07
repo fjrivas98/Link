@@ -223,6 +223,7 @@ class UserController extends Controller {
         if($this->getSession()->isLogged() && $user2->getAdmin()==1){
             $this->getModel()->set('twigFile', '_edituser.html');
             $user = $this->getModel()->get2($id);
+            // echo Util::varDump($user);
             $this->getModel()->set('user', $user);
             
         }else{
